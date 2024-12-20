@@ -1,65 +1,209 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的GitHub主页</title>
+    <title>Yesterday Cafe</title>
     <style>
+        :root {
+            --primary-color: #333;
+            --secondary-color: #666;
+            --link-color: #0066cc;
+            --background-color: #fff;
+            --code-background: #fff8dc;
+        }
+
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--primary-color);
+            display: flex;
+            box-sizing: border-box;
         }
-        header {
-            background-color: #24292e;
-            color: white;
-            padding: 1rem;
-            text-align: center;
+
+        *, *:before, *:after {
+            box-sizing: inherit;
         }
-        .container {
-            padding: 2rem;
-        }
-        .project {
-            background-color: white;
-            margin-bottom: 1rem;
-            padding: 1rem;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .project h2 {
-            margin-top: 0;
-        }
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #24292e;
-            color: white;
+
+        .sidebar {
+            width: 300px;
+            height: 100vh;
             position: fixed;
-            width: 100%;
-            bottom: 0;
+            background-image: url('https://github.com/moepie/moepie.github.io/blob/main/images/side.png?raw=true');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 3px solid white;
+        }
+
+        .site-title {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .site-description {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .nav-links {
+            margin-bottom: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            margin-top: auto;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        .main-content {
+            margin-left: 300px;
+            padding: 4rem;
+            max-width: 800px;
+            width: calc(100% - 300px);
+            box-sizing: border-box;
+        }
+
+        .post-header {
+            margin-bottom: 2rem;
+        }
+
+        .post-title {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .post-meta {
+            color: var(--secondary-color);
+        }
+
+        .code-block {
+            background: var(--code-background);
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            font-family: monospace;
+        }
+
+        .tags {
+            margin: 1rem 0;
+        }
+
+        .tag {
+            background: #eee;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            margin-right: 0.5rem;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .related-posts {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .related-posts h2 {
+            margin-bottom: 1rem;
+        }
+
+        .related-posts a {
+            color: var(--link-color);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            color: var(--secondary-color);
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>欢迎来到我的GitHub主页</h1>
-    </header>
-    <div class="container">
-        <div class="project">
-            <h2>项目名称 1</h2>
-            <p>项目描述 1</p>
-            <a href="https://github.com/yourusername/project1" target="_blank">查看项目</a>
+    <aside class="sidebar">
+        <img src="https://avatars.githubusercontent.com/moepie" alt="Profile" class="profile-img">
+        <h1 class="site-title">moepie home</h1>
+        <p class="site-description">moepie github home</p>
+        <nav class="nav-links">
+            <a href="https://wiki.moepie.top">wiki</a>
+            <a href="#about">About</a>
+        </nav>
+        <div class="social-links">
+            <a href="mailto:example@example.com">📧</a>
+            <a href="https://twitter.com">🐦</a>
+            <a href="https://github.com">📦</a>
         </div>
-        <div class="project">
-            <h2>项目名称 2</h2>
-            <p>项目描述 2</p>
-            <a href="https://github.com/yourusername/project2" target="_blank">查看项目</a>
-        </div>
-        <!-- 添加更多项目 -->
-    </div>
-    <footer>
-        <p>© 2023 我的GitHub主页</p>
-    </footer>
+    </aside>
+
+    <main class="main-content">
+        <article>
+            <header class="post-header">
+                <h1 class="post-title">the first md</h1>
+                <div class="post-meta">4 Oct 2024 • moepie</div>
+            </header>
+
+            <h2>Hello</h2>
+            
+            <div class="code-block">
+                ```
+                test markdown
+                ```
+                - 1
+                - 2
+                - 3
+                - 4
+            </div>
+
+            <blockquote>
+                Hello world
+            </blockquote>
+
+            <div class="tags">
+                <a href="#diary" class="tag">diary</a>
+                <a href="#example" class="tag">example</a>
+            </div>
+
+            <section class="related-posts">
+                <h2>Related posts</h2>
+                <a href="#">Testing MathJax <span>02 Oct 2020</span></a>
+                <a href="#">Releasing Not Pure Poole v0.1.0 <span>01 Oct 2020</span></a>
+                <a href="#">Welcome to Not Pure Poole <span>29 Sep 2020</span></a>
+            </section>
+
+            <footer class="footer">
+                ©   Powered by 0.dev
+            </footer>
+        </article>
+    </main>
 </body>
 </html>
